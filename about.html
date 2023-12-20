@@ -1,0 +1,60 @@
+<html>
+
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="./styles.css">
+<link rel="shortcuticon" href="./pictures/icon.png" >
+<title>Мир Жуков/О нас</title>
+<script src="https://api-maps.yandex.ru/2.1/?apikey=ВАШ_API_КЛЮЧ&lang=ru_RU" type="text/javascript"></script> 
+</head>
+
+<body>
+<h1 align="center">Мир Жуков</h1>
+<header>
+        <div class="header-content">            
+            <nav>
+                <ul>
+                    <li><a href="index.html">Каталог</a></li>
+                    
+                    <li><a href="about.html">О нас</a></li>
+					<li><a href="cart.html">Корзина</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+<div id="contact-info">
+        <p><strong>Название места:</strong> Ярославский автомеханический колледж</p>
+        <p><strong>Телефон:</strong> +7 (123) 456-7890</p>
+    </div>
+
+	
+    <div id="map" style="height: 500px; width: 100%;"></div>
+    <script>
+        ymaps.ready(init);
+
+        function init() {
+            var myMap = new ymaps.Map('map', {
+                center: [57.641563, 39.850747], // Координаты центра карты
+                zoom: 12 // Уровень масштабирования
+            });
+
+            var myPlacemark = new ymaps.Placemark([57.641563, 39.850747], {
+                hintContent: 'Ярославский автомеханический колледж',
+                balloonContent: ''
+            });
+
+            myMap.geoObjects.add(myPlacemark);
+        }
+    </script>
+
+
+<div class="moving-text">
+<marquee scrollamount="25" >© 2023 Попов Кирилл</marquee>
+</div>
+
+
+
+
+
+</body>
+</html>
